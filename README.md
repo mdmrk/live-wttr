@@ -1,2 +1,5 @@
 # live-wttr
-Qtile custom Wttr widget that displays weather data base on your location
+
+## How to use
+Place it in your `~/.config/qtile` directory and import `from live_wttr import LiveWttr`
+Works the same as the original widget, but location parameter is omitted
