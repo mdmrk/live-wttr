@@ -95,7 +95,12 @@ class LiveWttr(GenPollUrl):
             "format": self.format,
             "lang": self.lang,
         }
-        location = geocoder.ip('me').json["city"]
+
+        location = None
+        try:
+            location = geocoder.ip('me').json["city"]
+        except:
+            location = "London"
         self.location = {location: location}
         url = f"https://wttr.in/{location}?{self.units}&{urlencode(params)}"
         return url
